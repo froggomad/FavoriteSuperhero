@@ -11,7 +11,7 @@ import CoreData
 
 
 extension Biography {
-    convenience init?(fullName: String, firstAppearance: String, aliases: NSSet, placeOfBirth: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
+    convenience init?(fullName: String, firstAppearance: String, aliases: NSSet = [], placeOfBirth: String, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
         self.init(context: context)
         self.fullName = fullName
         self.firstAppearance = firstAppearance
@@ -19,7 +19,7 @@ extension Biography {
     }
 
     convenience init?(representation: BiographyRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        self.init(fullName: representation.fullName, firstAppearance: representation.firstAppearance, aliases: NSSet(object: representation.aliases), placeOfBirth: representation.placeOfBirth, context: context)
+        self.init(fullName: representation.fullName, firstAppearance: representation.firstAppearance, placeOfBirth: representation.placeOfBirth, context: context)
     }
 
 }

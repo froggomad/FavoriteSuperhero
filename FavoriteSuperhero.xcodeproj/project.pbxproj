@@ -13,6 +13,10 @@
 		B90B329023E7DE96003899D8 /* BiographyRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90B328F23E7DE96003899D8 /* BiographyRepresentation.swift */; };
 		B90B329223E7DECA003899D8 /* Biography+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90B329123E7DECA003899D8 /* Biography+Convenience.swift */; };
 		B90B329523E7E144003899D8 /* PowerstatsRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90B329423E7E144003899D8 /* PowerstatsRepresentation.swift */; };
+		B90B329723E7E1CB003899D8 /* Powerstats+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90B329623E7E1CB003899D8 /* Powerstats+Convenience.swift */; };
+		B90B329923E7E31C003899D8 /* ImageRepresentation.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90B329823E7E31C003899D8 /* ImageRepresentation.swift */; };
+		B90B329B23E7E336003899D8 /* ImageRepresentation+convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90B329A23E7E336003899D8 /* ImageRepresentation+convenience.swift */; };
+		B90B329E23E86067003899D8 /* Alias+Convenience.swift in Sources */ = {isa = PBXBuildFile; fileRef = B90B329D23E86067003899D8 /* Alias+Convenience.swift */; };
 		B9D670C623E3E3620076323D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D670C523E3E3620076323D /* AppDelegate.swift */; };
 		B9D670C823E3E3620076323D /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D670C723E3E3620076323D /* SceneDelegate.swift */; };
 		B9D670CA23E3E3620076323D /* SuperHeroDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9D670C923E3E3620076323D /* SuperHeroDetailViewController.swift */; };
@@ -33,6 +37,10 @@
 		B90B328F23E7DE96003899D8 /* BiographyRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BiographyRepresentation.swift; sourceTree = "<group>"; };
 		B90B329123E7DECA003899D8 /* Biography+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Biography+Convenience.swift"; sourceTree = "<group>"; };
 		B90B329423E7E144003899D8 /* PowerstatsRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PowerstatsRepresentation.swift; sourceTree = "<group>"; };
+		B90B329623E7E1CB003899D8 /* Powerstats+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Powerstats+Convenience.swift"; sourceTree = "<group>"; };
+		B90B329823E7E31C003899D8 /* ImageRepresentation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageRepresentation.swift; sourceTree = "<group>"; };
+		B90B329A23E7E336003899D8 /* ImageRepresentation+convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "ImageRepresentation+convenience.swift"; sourceTree = "<group>"; };
+		B90B329D23E86067003899D8 /* Alias+Convenience.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Alias+Convenience.swift"; sourceTree = "<group>"; };
 		B9D670C223E3E3620076323D /* FavoriteSuperhero.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = FavoriteSuperhero.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B9D670C523E3E3620076323D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B9D670C723E3E3620076323D /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -81,6 +89,7 @@
 			children = (
 				B90B328F23E7DE96003899D8 /* BiographyRepresentation.swift */,
 				B90B329123E7DECA003899D8 /* Biography+Convenience.swift */,
+				B90B329C23E8604C003899D8 /* Aliases */,
 			);
 			path = Biography;
 			sourceTree = "<group>";
@@ -88,6 +97,8 @@
 		B90B328E23E7DE40003899D8 /* Image */ = {
 			isa = PBXGroup;
 			children = (
+				B90B329823E7E31C003899D8 /* ImageRepresentation.swift */,
+				B90B329A23E7E336003899D8 /* ImageRepresentation+convenience.swift */,
 			);
 			path = Image;
 			sourceTree = "<group>";
@@ -96,8 +107,17 @@
 			isa = PBXGroup;
 			children = (
 				B90B329423E7E144003899D8 /* PowerstatsRepresentation.swift */,
+				B90B329623E7E1CB003899D8 /* Powerstats+Convenience.swift */,
 			);
 			path = Powerstats;
+			sourceTree = "<group>";
+		};
+		B90B329C23E8604C003899D8 /* Aliases */ = {
+			isa = PBXGroup;
+			children = (
+				B90B329D23E86067003899D8 /* Alias+Convenience.swift */,
+			);
+			path = Aliases;
 			sourceTree = "<group>";
 		};
 		B9D670B923E3E3620076323D = {
@@ -292,8 +312,12 @@
 				B90B329023E7DE96003899D8 /* BiographyRepresentation.swift in Sources */,
 				B9D670E823E3F09C0076323D /* HeroRepresentation.swift in Sources */,
 				B9D670E223E3EA410076323D /* NetworkService.swift in Sources */,
+				B90B329B23E7E336003899D8 /* ImageRepresentation+convenience.swift in Sources */,
 				B9D670C823E3E3620076323D /* SceneDelegate.swift in Sources */,
+				B90B329923E7E31C003899D8 /* ImageRepresentation.swift in Sources */,
+				B90B329723E7E1CB003899D8 /* Powerstats+Convenience.swift in Sources */,
 				B9D670E523E3EDC00076323D /* FavoriteSuperhero.xcdatamodeld in Sources */,
+				B90B329E23E86067003899D8 /* Alias+Convenience.swift in Sources */,
 				B90B328223E77A5C003899D8 /* SearchCollectionViewController.swift in Sources */,
 				B90B328523E77C80003899D8 /* HeroSearchCollectionViewCell.swift in Sources */,
 				B9D670EC23E3F5820076323D /* CoreDataStack.swift in Sources */,

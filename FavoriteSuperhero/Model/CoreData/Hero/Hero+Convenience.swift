@@ -25,6 +25,6 @@ extension Hero {
     }
     
     convenience init?(representation: HeroRepresentation, context: NSManagedObjectContext = CoreDataStack.shared.mainContext) {
-        self.init(id: representation.id, name: representation.name, powerstats: representation.powerstats, biography: Biography(representation: representation.biography), image: representation.image, context: context)
+        self.init(id: representation.id, name: representation.name, powerstats: Powerstats(representation: representation.powerstats)!, biography: Biography(representation: representation.biography)!, image: Image(representation: representation.image)!, context: context)
     }
 }

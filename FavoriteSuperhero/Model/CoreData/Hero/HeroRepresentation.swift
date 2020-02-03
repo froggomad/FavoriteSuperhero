@@ -19,11 +19,3 @@ struct HeroRepresentation: Codable {
     let biography: BiographyRepresentation
     let image: ImageRepresentation
 }
-
-
-
-
-
-struct ImageRepresentation: Codable {
-    var url: String
-}

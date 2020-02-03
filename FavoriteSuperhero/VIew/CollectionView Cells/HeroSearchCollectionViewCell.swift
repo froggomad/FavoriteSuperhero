@@ -9,6 +9,8 @@
 import UIKit
 
 class HeroSearchCollectionViewCell: UICollectionViewCell {
+    @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var nameLbl: UILabel!
     
     
     var hero: Hero? {
@@ -18,6 +20,6 @@ class HeroSearchCollectionViewCell: UICollectionViewCell {
     }
     
     func updateViews() {
-        hero?.superpowers
+        self.nameLbl.text = hero!.name
     }
 }

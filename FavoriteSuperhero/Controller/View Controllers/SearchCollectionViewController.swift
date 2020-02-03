@@ -15,18 +15,20 @@ class SearchCollectionViewController: UIViewController {
     
     //MARK: Properties
     let heroController = HeroController()
+    var heroes = [Hero]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        collectionView.delegate = self
+        collectionView.dataSource = self
         heroController.getHero(name: "Batman") { (_) in
             for rep in self.heroController.heroReps {
-                print(rep.powerstats)
-                print(Hero(representation: rep))
+                guard let hero = Hero(representation: rep) else {return}
+                self.heroes.append(hero)
             }
             DispatchQueue.main.async {
                 self.collectionView.reloadData()
             }
-            
         }
         // Do any additional setup after loading the view.
     }
@@ -45,11 +47,14 @@ extension SearchCollectionViewController: UICollectionViewDelegate {
 
 extension SearchCollectionViewController: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        1
+        return heroes.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        return UICollectionViewCell()
+        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "HeroCell", for: indexPath) as? HeroSearchCollectionViewCell else {return UICollectionViewCell()}
+        cell.hero = heroes[indexPath.item]
+        cell.backgroundColor = .red
+        return cell
     }
     
     
@@ -57,10 +62,6 @@ extension SearchCollectionViewController: UICollectionViewDataSource {
 
 extension SearchCollectionViewController: UICollectionViewDelegateFlowLayout {
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        if indexPath.item != 0 {
-            return CGSize(width: self.collectionView.frame.width / 3, height: 50)
-        } else {
-            return CGSize(width: self.collectionView.frame.width, height: 50)
-        }
+        return CGSize(width: self.collectionView.frame.width / 3 - 20, height: 50)
     }
 }

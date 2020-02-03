@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="15702" systemVersion="19C57" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Aliases" representedClassName="Aliases" parentEntity="Biography" syncable="YES" codeGenerationType="class">
+        <attribute name="string" optional="YES" attributeType="String"/>
+        <relationship name="biography" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Biography" inverseName="aliases" inverseEntity="Biography"/>
+    </entity>
+    <entity name="Biography" representedClassName="Biography" syncable="YES" codeGenerationType="class">
+        <attribute name="firstAppearance" optional="YES" attributeType="String"/>
+        <attribute name="fullName" optional="YES" attributeType="String"/>
+        <attribute name="placeOfBirth" optional="YES" attributeType="String"/>
+        <relationship name="aliases" toMany="YES" deletionRule="Nullify" destinationEntity="Aliases" inverseName="biography" inverseEntity="Aliases"/>
+        <relationship name="hero" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="biography" inverseEntity="Hero"/>
+    </entity>
+    <entity name="Hero" representedClassName="Hero" syncable="YES" codeGenerationType="class">
+        <attribute name="id" attributeType="String"/>
+        <attribute name="name" attributeType="String"/>
+        <relationship name="biography" maxCount="1" deletionRule="Nullify" destinationEntity="Biography" inverseName="hero" inverseEntity="Biography"/>
+        <relationship name="image" maxCount="1" deletionRule="Nullify" destinationEntity="Image" inverseName="hero" inverseEntity="Image"/>
+        <relationship name="powerstats" maxCount="1" deletionRule="Nullify" destinationEntity="Powerstats" inverseName="hero" inverseEntity="Powerstats"/>
+    </entity>
+    <entity name="Image" representedClassName="Image" parentEntity="Hero" syncable="YES" codeGenerationType="class">
+        <attribute name="url" optional="YES" attributeType="String"/>
+        <relationship name="hero" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="image" inverseEntity="Hero"/>
+    </entity>
+    <entity name="Powerstats" representedClassName="Powerstats" parentEntity="Hero" syncable="YES" codeGenerationType="class">
+        <attribute name="combat" optional="YES" attributeType="String"/>
+        <attribute name="durability" optional="YES" attributeType="String"/>
+        <attribute name="intelligence" optional="YES" attributeType="String"/>
+        <attribute name="power" optional="YES" attributeType="String"/>
+        <attribute name="speed" optional="YES" attributeType="String"/>
+        <attribute name="strength" optional="YES" attributeType="String"/>
+        <relationship name="hero" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="Hero" inverseName="powerstats" inverseEntity="Hero"/>
+    </entity>
+    <elements>
+        <element name="Hero" positionX="-54" positionY="-9" width="128" height="118"/>
+        <element name="Image" positionX="-221.7578125" positionY="33.74609375" width="128" height="73"/>
+        <element name="Powerstats" positionX="150.01171875" positionY="-39.03125" width="128" height="148"/>
+        <element name="Biography" positionX="-45.0234375" positionY="147.4765625" width="128" height="118"/>
+        <element name="Aliases" positionX="-37.5546875" positionY="315.0234375" width="128" height="73"/>
+    </elements>
+</model>
